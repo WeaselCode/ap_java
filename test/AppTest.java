@@ -103,8 +103,10 @@ public class AppTest {
         });
         
         vehicles.sort((a,b)->a.compareTo(b));
-        
         assertEquals(new Truck("Ford", "Ranger", 12345), vehicles.get(0));
+        assertEquals(new Truck("Dodge", "Ram", 23456), vehicles.get(1));
+        assertEquals(new Truck("Chevrolet", "Silverado", 34567), vehicles.get(2));
+        
         
     }
     

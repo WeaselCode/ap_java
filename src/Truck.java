@@ -30,15 +30,14 @@ public class Truck implements Vehicle {
     public String description() {
         return "Vehicle is a " + make + ": " + model + " with VIN: " + VIN; 
     }
-
     @Override
     public int compareTo(Vehicle o) {
         if (o instanceof Truck) {
             Truck truck = (Truck) o;
-            if (make.toLowerCase().charAt(0) < truck.make.toLowerCase().charAt(0)) return  -1;
-            if (make.toLowerCase().charAt(0) > truck.make.toLowerCase().charAt(0)) return   1;
-            if (model.toLowerCase().charAt(0) < truck.model.toLowerCase().charAt(0)) return  -1;
-            if (model.toLowerCase().charAt(0) > truck.model.toLowerCase().charAt(0)) return   1;
+            if(make.compareToIgnoreCase(truck.make) > 0) return -1;
+            if(make.compareToIgnoreCase(truck.make) < 0) return 1;
+            if(model.compareToIgnoreCase(truck.model) > 0) return -1;
+            if(model.compareToIgnoreCase(truck.model) < 0) return 1;
             if (VIN < truck.VIN) return  -1;
             if (VIN > truck.VIN) return   1;
             return 0;
