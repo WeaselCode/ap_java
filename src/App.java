@@ -1,3 +1,6 @@
+
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -9,12 +12,14 @@
  * @author Weasel
  */
 public class App {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args){
+        Thread t1 = new Thread(new Test("one"));
+        Thread t2 = new Thread(new Test("two"));
+        Thread t3 = new Thread(new Test("three"));
+        Thread t4 = new Thread(new Test("four"));
+        t1.start();
+        t2.start();
+        t3.start();
+        t4.start();
     }
-    
 }
